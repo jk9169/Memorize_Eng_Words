@@ -1,7 +1,4 @@
 import pandas as pd
-import os
-import openpyxl
-
 
 # 엑셀 파일 불러오기 
 word = pd.read_excel('EngWords_Data.xlsx',sheet_name='words')
