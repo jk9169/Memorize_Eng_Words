@@ -1,4 +1,5 @@
 import pandas as pd
+import random
 
 
 
@@ -16,16 +17,20 @@ score = 0
 cnt = 0
 print("영어 단어 암기 프로그램 시작!\n")
 
-while (cnt < len(word[mean_col]) ):
-    print("뜻:", word[mean_col][cnt])
+while (cnt < len(word[mean_col])):
+    #무작위 단어 선택
+    word_list = list(zip(word[engword_col], word[mean_col]))
+    random_word = random.sample(word_list, 1)[0]
+    
+    print("뜻:", random_word[1])
     answer = input("영어 : ")
     #정답인 경우
-    if answer == word[engword_col][cnt] :
+    if answer == random_word[0]:
         print("정답입니다!")
         score += 1
     #오답인 경우
     else:
-        print("오답, 정답은 "+word[engword_col][cnt] )
+        print("오답, 정답은 "+ random_word[0])
     #다음으로 넘어가기 전 
     print("\n")   
     cnt += 1
